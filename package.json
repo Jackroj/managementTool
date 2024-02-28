@@ -1,0 +1,24 @@
+{
+  "name": "managementtool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/express": "^2.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.1",
+    "fastify-cors": "^2.2.0",
+    "joi": "^17.12.2",
+    "mysql2": "^3.9.2",
+    "nodemon": "^3.1.0",
+    "sequelize": "^6.37.1"
+  }
+}
