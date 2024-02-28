@@ -9,6 +9,7 @@ const getAllUser = async() =>{
 }
 const updateUser = async(params) =>{
     const {id, ...rest} = params;
+    console.log({id, ...rest});
     return await users.update({
         ...rest
     },

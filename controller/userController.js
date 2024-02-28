@@ -36,7 +36,7 @@ const handleUpdateUser = async(_request, _reply) =>{
             data: result
         });
     } catch (error) {
-        throw new Error("error occured in update user");
+        throw new Error(error);
     }
 }
 
