@@ -19,6 +19,29 @@ const updateUser = async(params) =>{
       }
     })
 }
+//associate query example with ascending order
+// users.findAll({
+//     attributes: ['name'],
+//     distinct: 'true',
+//     order: [
+//         ['name', 'ASC']
+//     ],
+//     where:{
+//         pincode: {[Op.startWith]: '500'}
+// }
+//     [Op.not]: [
+//         {
+//             erp_location_id: current_location_id
+//         }
+//     ],
+//     include: [
+//         {
+//             model: targetModel,
+//             where: {value: true}
+//         }
+//     ]
+// })
+
 const deleteUser = async(id) =>{
     return await users.destroy({
         where:{
