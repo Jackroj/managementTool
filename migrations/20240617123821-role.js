@@ -12,14 +12,6 @@ module.exports = {
       },
       userId: {
         type: Sequelize.DataTypes.INTEGER,
-        references: {
-          model: {
-            tableName: 'users',
-            schema: 'schema',
-          },
-          key: 'id',
-        },
-        allowNull: false,
       },
       name: {
         type: Sequelize.INTEGER
@@ -36,6 +28,19 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+
+    await queryInterface.addConstraint("role", {
+      type: "foreign key",
+      fields: ["userId"],
+      name: "fk_role_users",
+      references: {
+        table: "users",
+        field: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "NO ACTION",
+    });
+
   },
 
   async down (queryInterface, Sequelize) {

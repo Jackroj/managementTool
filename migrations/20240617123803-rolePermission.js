@@ -11,26 +11,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       roleId: {
-        type: Sequelize.DataTypes.INTEGER,
-        references: {
-          model: {
-            tableName: 'role',
-            schema: 'schema',
-          },
-          key: 'id',
-        },
-        allowNull: false,
+        type: Sequelize.DataTypes.INTEGER
       },
       permissionId: {
-        type: Sequelize.DataTypes.INTEGER,
-        references: {
-          model: {
-            tableName: 'permission',
-            schema: 'schema',
-          },
-          key: 'id',
-        },
-        allowNull: false,
+        type: Sequelize.DataTypes.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +24,30 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    });
+
+    await queryInterface.addConstraint("rolePermission", {
+      type: "foreign key",
+      fields: ["permissionId"],
+      name: "fk_role_permission_permission",
+      references: {
+        table: "permission",
+        field: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "NO ACTION",
+    });
+
+    await queryInterface.addConstraint("rolePermission", {
+      type: "foreign key",
+      fields: ["roleId"],
+      name: "fk_role_permission_role",
+      references: {
+        table: "role",
+        field: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "NO ACTION",
     });
   },
 
