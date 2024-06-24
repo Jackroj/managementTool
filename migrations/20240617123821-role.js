@@ -10,8 +10,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      roleId: {
-        type: Sequelize.INTEGER,
+      userId: {
+        type: Sequelize.DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: 'users',
+            schema: 'schema',
+          },
+          key: 'id',
+        },
+        allowNull: false,
       },
       name: {
         type: Sequelize.INTEGER

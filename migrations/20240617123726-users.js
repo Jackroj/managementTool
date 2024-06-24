@@ -10,14 +10,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      roleId: {
-        type: Sequelize.INTEGER,
+      username: {
+        type: Sequelize.STRING
       },
-      name: {
-        type: Sequelize.INTEGER
+      email: {
+        type: Sequelize.STRING
       },
-      description: {
-        type: Sequelize.DATE
+      password: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

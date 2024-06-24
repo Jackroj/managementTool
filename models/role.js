@@ -9,6 +9,9 @@ module.exports = (sequelize, Sequelize) => {
           roleId: {
             type: Sequelize.INTEGER,
           },
+          userId: {
+            type: Sequelize.INTEGER,
+          },
           name: {
             type: Sequelize.INTEGER
           },
@@ -23,6 +26,10 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             type: Sequelize.DATE
           }
+    }, {
+      freezeTableName: true,
+      tableName: "role",
+      underscored: true,
     });
     return role;
   };

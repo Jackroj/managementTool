@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
-    "migrate": "npx sequelize db:migrate"
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo"
   },
   "keywords": [],
   "author": "",

@@ -23,6 +23,10 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             type: Sequelize.DATE
           }
+    },{
+      freezeTableName: true,
+      tableName: "permission",
+      underscored: true,
     });
     return role;
   };

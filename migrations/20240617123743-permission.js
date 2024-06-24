@@ -10,9 +10,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      permissionId: {
-        type: Sequelize.INTEGER,
-      },
       name: {
         type: Sequelize.INTEGER
       },

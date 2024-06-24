@@ -23,7 +23,16 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
       type: Sequelize.DATE
     }
+  }, {
+    freezeTableName: true,
+    tableName: "users",
+    underscored: true,
   });
+  users.associate = (models) => {
+    models.users.belongsTo(models.role, {
+      foreignKey: "roleId",
+    });
+  };
 // users.associate = (models) =>{
 //   models.users.belongTo(mode.targerModel, {
 //     foreignKey: '',
